@@ -611,7 +611,7 @@ class Mail
 		// return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
 		// filter_var proved to be unworthy (passed foo..bar@domain.com as valid),
 		// and was therefore replace with
-		$regex = "/^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i";
+		$regex = "/^([\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+\.)*[\w\!\#$\%\&\'\*\+\-\/\=\?\^\`{\|\}\~]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,20})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)$/i";
 		// from http://fightingforalostcause.net/misc/2006/compare-email-regex.php
 		return preg_match($regex, $email) === 1;
 	}
